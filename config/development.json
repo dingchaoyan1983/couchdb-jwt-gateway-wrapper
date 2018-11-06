@@ -1,0 +1,9 @@
+{
+  "API_URL": "http://nginx/api",
+  "CLOUD_CONFIG_SERVER": {
+    "URL": "http://ba-svc-config",
+    "APPLICATION": "bar",
+    "PROFILES": ["test"]
+  },
+  "COUCHDB_URL": "http://couchdb:5984"
+}

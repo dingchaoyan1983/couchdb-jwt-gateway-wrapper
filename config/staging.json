@@ -1,0 +1,9 @@
+{
+  "API_URL": "http://192.168.0.167/api",
+  "CLOUD_CONFIG_SERVER": {
+    "URL": "http://192.168.0.167",
+    "APPLICATION": "bar",
+    "PROFILES": ["test"]
+  },
+  "COUCHDB_URL": "http://192.168.0.167:5984"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "api-sync",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=default node ./dist/index",
+    "start:dev": "NODE_ENV=development node ./dist/index",
+    "start:prod": "NODE_ENV=production node ./dist/index",
+    "build:dev": "./node_modules/.bin/rimraf dist && ./node_modules/.bin/better-npm-run build:dev",
+    "build:prod": "./node_modules/.bin/rimraf dist && ./node_modules/.bin/better-npm-run build:prod",
+    "build:webpack": "./node_modules/.bin/rimraf dist && ./node_modules/.bin/better-npm-run build:webpack"
+  },
+  "betterScripts": {
+    "build:prod": {
+      "command": "babel src --plugins transform-es2015-modules-commonjs -d dist",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "build:dev": {
+      "command": "./node_modules/.bin/babel src --plugins transform-es2015-modules-commonjs --source-maps -d dist",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "build:webpack": {
+      "command": "./node_modules/.bin/webpack",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
+  "dependencies": {
+    "cloud-config-client": "^1.4.2",
+    "config": "^2.0.1",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
+    "debug": "~2.6.9",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "http-errors": "^1.6.3",
+    "http-proxy": "1.11.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "nano": "^7.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "better-npm-run": "^0.1.1",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.23.1",
+    "webpack-cleanup-plugin": "^0.5.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
